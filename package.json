@@ -1,6 +1,7 @@
 {
   "name": "fix-common-accessibility-mistakes",
   "version": "1.0.0",
+  "private": true,
   "description": "This is a project to show common mistakes and improvements for forms and other interactions designed using GOV.UK Frontend.",
   "keywords": [
     "govuk",
@@ -11,19 +12,20 @@
     "url": "https://github.com/x-govuk/fix-common-accessibility-mistakes/issues"
   },
   "license": "MIT",
+  "type": "module",
   "main": "eleventy.config.js",
   "scripts": {
     "prebuild": "rimraf _site",
     "build": "eleventy",
-    "start": "eleventy --serve --quiet",
-    "lint:prettier": "prettier . --check",
-    "lint:prettier:fix": "prettier . --write",
+    "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix",
     "lint:js": "eslint '**/*.js'",
     "lint:js:fix": "eslint '**/*.js' --fix",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --write",
     "lint:scss": "stylelint '**/*.scss'",
     "lint:scss:fix": "stylelint '**/*.scss' --fix",
-    "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
-    "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix"
+    "start": "eleventy --serve --quiet"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -40,9 +42,7 @@
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^7.0.0"
   },
-  "private": true,
   "engines": {
     "node": ">=22"
-  },
-  "type": "module"
+  }
 }
