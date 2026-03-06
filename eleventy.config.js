@@ -39,12 +39,14 @@ export default function (eleventyConfig) {
       touch:
         'https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-icon-180.png'
     },
+    markdown: {
+      headingPermalinks: true
+    },
     opengraphImageUrl:
       'https://fix-common-accessibility-mistakes.x-govuk.org/assets/opengraph-image.png',
     header: {
       homepageUrl: 'https://x-govuk.org'
     },
-    headingPermalinks: true,
     homeKey: serviceName,
     serviceNavigation: {
       serviceName,

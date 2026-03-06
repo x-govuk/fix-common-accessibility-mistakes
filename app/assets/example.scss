@@ -1,6 +1,8 @@
 // GOV.UK Frontend
 @use "pkg:govuk-frontend/dist/govuk/base" with (
-  $govuk-template-background-colour: transparent
+  $govuk-functional-colours: (
+    template-background: transparent
+  )
 );
 
 // GOV.UK Prototype components
